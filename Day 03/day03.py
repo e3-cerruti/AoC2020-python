@@ -15,10 +15,15 @@ def main():
         position = (0, 0)
         trees = 0
 
-        while position[1] < height:
-            if lines[position[1]][position[0] % width] == '#':
+        # while position[1] < height:
+        #     if lines[position[1]][position[0] % width] == '#':
+        #         trees += 1
+        #     position = tuple(sum(i) for i in zip(position, slope))
+
+        for y in range(0, height, slope[1]):
+            x = (y // slope[1]) * slope[0] % width;
+            if lines[y][x] == '#':
                 trees += 1
-            position = tuple(sum(i) for i in zip(position, slope))
 
         print(f'Trees: {trees} on slope {slope}')
         product *= trees
