@@ -18,7 +18,7 @@ class HandheldGameConsole:
     def jmp(self, operands):
         self.program_counter += int(operands[0])
 
-    def nop(self, operands):
+    def nop(self, *_):
         self.program_counter += 1
 
     def load_program(self, instructions):
